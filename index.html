@@ -43,8 +43,8 @@
             </div>
             
             <div class="content-phase phase-2" id="phase2">
-            <h2 style="color: white;">Smart USB Charging</h2>
-            <p style="color: white;">Enjoy hassle-free recharging with a USB-powered design. A single charge provides days of use, making it the perfect travel companion.</p>
+            <h2 >Smart USB Charging</h2>
+            <p >Enjoy hassle-free recharging with a USB-powered design. A single charge provides days of use, making it the perfect travel companion.</p>
             <a href="#" class="btn">See Specs</a>
             </div>
             
@@ -73,7 +73,7 @@
         
         <div class="feature-card">
             <h3>Windproof Technology</h3>
-            <p>Reliable ignition in any weather lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum</p>
+            <p>Reliable ignition in any weather lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum ipsum</p>
         </div>
         </div>
     </section>
@@ -92,69 +92,8 @@
     <!-- Load GSAP from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
     
-    <script>
-        // Register ScrollTrigger plugin
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Create timeline for product animation
-        const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".product-container",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: true,
-            markers: false // Set to true for debugging
-        }
-        });
-        
-        // Content timelines
-        const contentTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".product-container",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: true
-        }
-        });
-        
-        // Animation phases for product
-        tl.fromTo("#product", 
-        { 
-            left: "10%",
-            top: "10%",
-            rotation: 0,
-            scale: 1
-        },
-        { 
-            left: "43%",
-            top: "60%",
-            xPercent: -50,
-            yPercent: -50,
-            scale: 1.1,
-            duration: 1
-        }
-        )
-        .to("#product", {
-        rotation: 360,
-        duration: 1
-        })
-        .to("#product", {
-        right: "10%",
-        top: "40%",
-        xPercent: 0,
-        yPercent: 0,
-        scale: 1,
-        duration: 1
-        });
-        
-        // Animation for content phases
-        contentTl
-        .to("#phase1", { opacity: 1, duration: 0.5 })
-        .to("#phase1", { opacity: 0, duration: 0.5 }, 1.5)
-        .to("#phase2", { opacity: 1, duration: 0.5 }, 2)
-        .to("#phase2", { opacity: 0, duration: 0.5 }, 3.5)
-        .to("#phase3", { opacity: 1, duration: 0.5 }, 4);
-    </script>
+    
     </body>
     </html>
