@@ -1,0 +1,160 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IgniteX - Premium Lighters</title>
+    <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">IgniteX</div>
+        <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#product">Product</a>
+         <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+         <h2 style="color: #ffffff;">Elevate Your Flame</h2>
+        <h4 style="color:#b8860b;"> with Precision, Style and Performance.</h4>
+        <h1 style="color: #d4c19c;"">Welcome to IgniteX</h1>
+       
+        <p>Discover the perfect blend of elegance and functionality with IgniteX lighters. Designed for those who appreciate precision engineering and modern aesthetics, IgniteX offers a premium lighting experience like no other.</p>
+        <a href="#" class="btn">Explore Now</a>
+    </div>
+    
+    <!-- Product Animation Section -->
+    <div class="product-container" id="about">
+        <div class="product-sticky" id="product-sticky">
+        <img src="./image.png" alt="Premium Headphones" class="product-image" id="product">
+        
+        <!-- Content that appears during animation -->
+        <div class="product-content">
+            <div class="content-phase phase-1" id="phase1">
+            <h2>Superior Design</h2>
+            <p>Designed with a sleek, lightweight frame for a comfortable grip. Available in multiple premium finishes to match your style.</p>
+            <a href="#" class="btn">Choose Colour</a>
+            </div>
+            
+            <div class="content-phase phase-2" id="phase2">
+            <h2 style="color: white;">Smart USB Charging</h2>
+            <p style="color: white;">Enjoy hassle-free recharging with a USB-powered design. A single charge provides days of use, making it the perfect travel companion.</p>
+            <a href="#" class="btn">See Specs</a>
+            </div>
+            
+            <div class="content-phase phase-3" id="phase3">
+ <h2 >Futuristic Plasma Arc</h2>
+    <p>Say goodbye to traditional flames! Our dual plasma arc technology ensures windproof, flameless ignition for a reliable and efficient lighting experience.</p>
+    <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Why Choose IgniteX</h2>
+        <div class="features-grid">
+        <div class="feature-card">
+            <h3>40-Hour Battery Life</h3>
+            <p>Experience the future with flameless electric lighters with long battery life along with type C charging.</p>
+        </div>
+        
+        <div class="feature-card">
+            <h3>Flame Control</h3>
+            <p>Adjustable flame intensity to suit your needs Flame Control Flame Control Flame Control Flame Control </p>
+        </div>
+        
+        <div class="feature-card">
+            <h3>Windproof Technology</h3>
+            <p>Reliable ignition in any weather lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum</p>
+        </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 IgniteX lighters. All rights reserved.</p>    
+        <!-- <div class="social-links">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">YouTube</a>
+        </div> -->
+    </footer>
+
+    <!-- Load GSAP from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Create timeline for product animation
+        const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".product-container",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true,
+            markers: false // Set to true for debugging
+        }
+        });
+        
+        // Content timelines
+        const contentTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".product-container",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true
+        }
+        });
+        
+        // Animation phases for product
+        tl.fromTo("#product", 
+        { 
+            left: "10%",
+            top: "10%",
+            rotation: 0,
+            scale: 1
+        },
+        { 
+            left: "43%",
+            top: "60%",
+            xPercent: -50,
+            yPercent: -50,
+            scale: 1.1,
+            duration: 1
+        }
+        )
+        .to("#product", {
+        rotation: 360,
+        duration: 1
+        })
+        .to("#product", {
+        right: "10%",
+        top: "40%",
+        xPercent: 0,
+        yPercent: 0,
+        scale: 1,
+        duration: 1
+        });
+        
+        // Animation for content phases
+        contentTl
+        .to("#phase1", { opacity: 1, duration: 0.5 })
+        .to("#phase1", { opacity: 0, duration: 0.5 }, 1.5)
+        .to("#phase2", { opacity: 1, duration: 0.5 }, 2)
+        .to("#phase2", { opacity: 0, duration: 0.5 }, 3.5)
+        .to("#phase3", { opacity: 1, duration: 0.5 }, 4);
+    </script>
+    </body>
+    </html>
