@@ -262,6 +262,7 @@ footer p {
 
     .content-phase {
         width: 80%;
+        padding: 0px 10px !important;
     }
 
 
