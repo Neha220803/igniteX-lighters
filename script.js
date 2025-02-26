@@ -60,3 +60,5 @@
         .to("#phase2", { opacity: 1, duration: 0.5 }, 2)
         .to("#phase2", { opacity: 0, duration: 0.5 }, 3.5)
         .to("#phase3", { opacity: 1, duration: 0.5 }, 4);
+
+        contentTl.timeScale(2); // Doubles the speed of all animations
